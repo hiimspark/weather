@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet"  href="/css/home.css">
+    <link rel="stylesheet"  href="/css/font.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+</head>
+<body>
+<main>
+    <div class="mainpage">
+    <h1>Weather Application</h1>
+    <form class="search" th:action="@{/search-city}" method="post">
+        <label for="city">Enter city name: </label>
+        <input type="text" id="city" name="city" required placeholder="e.g., London" />
+        <button type="submit">Search</button>
+    </form>
+    <div sec:authorize="!isAuthenticated()">
+        <p>
+            <a href="login">Login</a> or <a href="registration_page">register</a> to save favourite cities!
+        </p>
+    </div>
+    <div sec:authorize="isAuthenticated()">
+        <p>
+        <a href="logout" th:text="'Logout (User: ' + ${#authentication.name} + ')'"></a>
+        </p>
+    </div>
+    </div>
+</main>
+</body>
+</html>

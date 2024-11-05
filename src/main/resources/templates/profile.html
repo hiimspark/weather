@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet"  href="/css/profile.css">
+    <link rel="stylesheet"  href="/css/font.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+</head>
+<body>
+<main>
+    <div class="mainpage">
+<h1 th:text="${#authentication.name}"></h1>
+<form class="form" th:action="@{/profile/change_username}" method="post">
+    <div>
+        <label for="name">New username:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+<form class="form" th:action="@{/profile/change_password}" method="post">
+    <div>
+        <label for="password">New password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+        <form th:action="@{/logout}">
+        <button type="submit">Logout</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>

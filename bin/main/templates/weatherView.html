@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Your Favorite Cities' Weather</title>
+    <link rel="stylesheet"  href="/css/weatherView.css">
+    <link rel="stylesheet"  href="/css/font.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+</head>
+<body>
+<main>
+    <div class="mainpage">
+    <h1>Your Favorite Cities' Weather</h1>
+
+    <div class="cityblock" th:each="weather : ${weatherList}">
+        <h1 th:text="${weather.city}">City Name</h1>
+        <div class="weatherblock">
+            <p><strong>Temperature:</strong> <span th:text="${weather.temperature}">25°C</span></p>
+            <p><strong>Feels Like:</strong> <span th:text="${weather.feelsLike}">27°C</span></p>
+            <p><strong>Description:</strong> <span th:text="${weather.weatherDescription}">Partly Cloudy</span></p>
+            <p><strong>Wind Speed:</strong> <span th:text="${weather.windSpeed}">15 km/h</span></p>
+            <p><strong>Humidity:</strong> <span th:text="${weather.humidity}">65%</span></p>
+        </div>
+    </div>
+
+    <p th:if="${weatherList.isEmpty()}">You have no favorite cities.</p>
+    </div>
+</main>
+</body>
+</html>

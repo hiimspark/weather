@@ -1,0 +1,85 @@
+body{
+    margin:0;
+    background-image: url(../images/background.png);
+    display:flex; 
+    flex-direction:column; justify-content:center;
+    min-height:100vh;
+}
+
+html {
+    font-size:16px;
+}
+
+h1{
+    color:rgb(80, 115, 255);
+    font-size:3em;
+    text-align: center;
+}
+main{
+    margin:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainpage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    background: rgba(62, 102, 134, 0.267);
+    border-radius: 10px;
+    padding: 20px;
+    padding-bottom:10px;
+    gap:20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:15px;
+    
+}
+
+div, form{
+    color:aliceblue;
+}
+
+p{
+    text-align: center;
+}
+
+input{
+    margin-left:10px;
+}
+
+button{
+    border-radius: 10px;
+    border: 1px solid aliceblue;
+    padding: 10px 50px 10px 50px;
+    background-color:rgb(80, 115, 255);
+    color:aliceblue;
+}
+
+a:link{
+    color:rgb(80, 115, 255);
+}
+
+a:visited{
+    color:rgb(4, 54, 252);
+}
+
+a:hover{
+    color:rgb(59, 98, 252);
+}
+
+a:active{
+    color:rgb(27, 72, 250);
+}

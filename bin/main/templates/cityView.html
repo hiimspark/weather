@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather Details</title>
+    <link rel="stylesheet"  href="/css/cityView.css">
+    <link rel="stylesheet"  href="/css/font.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+</head>
+    <body>
+        <main>
+        <div class="mainpage">
+            <h1>Weather Information for <span th:text="${weather.city}">City</span></h1>
+            <div class="weatherblock">
+                <p><strong>Temperature:</strong> <span th:text="${weather.temperature}">25°C</span></p>
+                <p><strong>Feels Like:</strong> <span th:text="${weather.feelsLike}">27°C</span></p>
+                <p><strong>Description:</strong> <span th:text="${weather.weatherDescription}">Partly Cloudy</span></p>
+                <p><strong>Wind Speed:</strong> <span th:text="${weather.windSpeed}">15 km/h</span></p>
+                <p><strong>Humidity:</strong> <span th:text="${weather.humidity}">65%</span></p>
+            </div>
+            <form th:action="@{/weather/favourite}" method="post" sec:authorize="isAuthenticated()">
+                <input type="hidden" name="city" th:value="${city}">
+                <button type="submit">Mark as Favorite</button>
+            </form>
+
+            <div th:if="${message}" class="alert alert-info">
+                <p th:text="${message}"></p>
+            </div>
+
+        </div>
+        </main>
+    </body>
+</html>
